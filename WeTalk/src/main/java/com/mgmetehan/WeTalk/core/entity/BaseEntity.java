@@ -1,4 +1,4 @@
-package com.mgmetehan.WeTalk.core.model;
+package com.mgmetehan.WeTalk.core.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +16,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 @EntityListeners({AuditingEntityListener.class})
 @Getter
@@ -32,6 +33,12 @@ public abstract class BaseEntity implements Serializable {
 
     @LastModifiedDate
     protected Date lastModifiedDate;
+
+    @Column(nullable = false)
+    private Long createdBy;
+
+    @Column
+    private Long lastModifiedBy;
 
     private boolean enable = true;
 
@@ -50,4 +57,23 @@ public abstract class BaseEntity implements Serializable {
 
     public abstract <T extends BaseEntity> void update(T entity);
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BaseEntity that = (BaseEntity) o;
+        return id.equals(that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                '}';
+    }
 }
