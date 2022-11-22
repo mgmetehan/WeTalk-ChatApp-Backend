@@ -9,10 +9,9 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class MessageServiceImpl implements MessageService {
-    private MessageRepository messageRepository;
+    private final MessageRepository messageRepository;
 
-    @Override
-    public Message createMessage(Message message) {
+    public Message saveMessage(Message message) {
         return messageRepository.save(message);
     }
 }

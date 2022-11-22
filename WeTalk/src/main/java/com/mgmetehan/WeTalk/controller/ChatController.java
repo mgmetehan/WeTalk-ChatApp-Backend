@@ -7,9 +7,9 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class ChatController {
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
@@ -25,11 +25,7 @@ public class ChatController {
     @MessageMapping("/private-message")
     public Message recMessage(@Payload Message message) {
         simpMessagingTemplate.convertAndSendToUser(message.getReceiverName(), "/private", message);
-        messageService.createMessage(Message.builder()
-                .receiverName(message.getReceiverName())
-                .senderName(message.getMessage())
-                .message(message.getMessage())
-                .build());
+        messageService.saveMessage(message);
         System.out.println(message.toString());
         return message;
     }
