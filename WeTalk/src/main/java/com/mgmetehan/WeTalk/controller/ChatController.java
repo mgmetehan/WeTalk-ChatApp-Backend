@@ -2,6 +2,7 @@ package com.mgmetehan.WeTalk.controller;
 
 import com.mgmetehan.WeTalk.model.Message;
 import com.mgmetehan.WeTalk.service.MessageService;
+import com.mgmetehan.WeTalk.service.ratelimit.RateLimiter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -23,6 +24,7 @@ public class ChatController {
     }
 
     @MessageMapping("/private-message")
+    @RateLimiter(limit = 20, time = 60_000)
     public Message recMessage(@Payload Message message) {
         simpMessagingTemplate.convertAndSendToUser(message.getReceiverName(), "/private", message);
         messageService.saveMessage(message);
