@@ -4,10 +4,9 @@ import com.mgmetehan.WeTalk.model.Message;
 import com.mgmetehan.WeTalk.repository.MessageRepository;
 import com.mgmetehan.WeTalk.service.MessageService;
 import com.mgmetehan.WeTalk.shared.encryption.Encryption;
-import com.mgmetehan.WeTalk.shared.notification.INotificationSender;
-import com.mgmetehan.WeTalk.shared.notification.model.MailNotificationModel;
+import com.mgmetehan.WeTalk.shared.notification.mail.INotificationSender;
+import com.mgmetehan.WeTalk.shared.notification.mail.model.MailNotificationModel;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

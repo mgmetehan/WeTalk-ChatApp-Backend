@@ -1,4 +1,4 @@
-package com.mgmetehan.WeTalk.shared.notification.config;
+package com.mgmetehan.WeTalk.shared.notification.mail.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

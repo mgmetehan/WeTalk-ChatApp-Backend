@@ -1,4 +1,4 @@
-package com.mgmetehan.WeTalk.shared.notification.constant;
+package com.mgmetehan.WeTalk.shared.notification.mail.constant;
 
 import lombok.experimental.UtilityClass;
 

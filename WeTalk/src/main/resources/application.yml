@@ -13,3 +13,8 @@ spring:
 
 mail:
   from: mail@gmail.com
+
+sms:
+  url: https://duzeltilecek.ufuk.com
+  mock: true
+  otp-message-format: '#otp TEK KULLANIMLIK PAROLANIZ ILE SISTEME GIRIS YAPABILIRSINIZ.'

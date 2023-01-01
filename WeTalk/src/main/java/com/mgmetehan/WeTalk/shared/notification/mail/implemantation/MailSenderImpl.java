@@ -1,11 +1,11 @@
-package com.mgmetehan.WeTalk.shared.notification.implemantation;
+package com.mgmetehan.WeTalk.shared.notification.mail.implemantation;
 
-import com.mgmetehan.WeTalk.shared.notification.INotificationSender;
-import com.mgmetehan.WeTalk.shared.notification.config.MailConfigurationProperties;
-import com.mgmetehan.WeTalk.shared.notification.constant.MailConstants;
-import com.mgmetehan.WeTalk.shared.notification.model.BaseNotificationModel;
-import com.mgmetehan.WeTalk.shared.notification.model.MailAttachment;
-import com.mgmetehan.WeTalk.shared.notification.model.MailNotificationModel;
+import com.mgmetehan.WeTalk.shared.notification.mail.INotificationSender;
+import com.mgmetehan.WeTalk.shared.notification.mail.config.MailConfigurationProperties;
+import com.mgmetehan.WeTalk.shared.notification.mail.constant.MailConstants;
+import com.mgmetehan.WeTalk.shared.notification.mail.model.BaseNotificationModel;
+import com.mgmetehan.WeTalk.shared.notification.mail.model.MailAttachment;
+import com.mgmetehan.WeTalk.shared.notification.mail.model.MailNotificationModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.javamail.JavaMailSender;

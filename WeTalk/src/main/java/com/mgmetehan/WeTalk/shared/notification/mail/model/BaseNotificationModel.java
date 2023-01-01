@@ -1,4 +1,4 @@
-package com.mgmetehan.WeTalk.shared.notification.model;
+package com.mgmetehan.WeTalk.shared.notification.mail.model;
 
 import lombok.Getter;
 import lombok.experimental.SuperBuilder;
